@@ -48,3 +48,15 @@ for (var i = 0; i < accountLength; i++) {
             balRec = [...balRec, ...[balRecForNotFound]]
         }
     }
+
+/* added today */
+
+let accountRef = reqjs["soapenv:Envelope"][`soapenv:Body`][`a:BalInqRq`][`BalRef`];   
+    if(!Array.isArray(accountRef) ) {
+        accountRef = [accountRef];
+    };
+    const accountLength = accountRef.length;
+    console.log(accountLength);
+
+    let balRec = [];
+    let isFound = 0;
